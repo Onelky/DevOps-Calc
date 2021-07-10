@@ -2,12 +2,12 @@ Feature: Dividir dos numeros
 
   Scenario Outline: dividion
      Given que deseo dividir dos numeros
-      When yo ingrese el numero <num1> y <num2>
+      When introduzca los numeros <num1> y <num2>
       Then el resultado <resultado> debe ser la division de ambos 
   
-      Examples: Amphibians
-      | num1 | num2  | resultado          |
-      |   2  |    1  |     2              |
-      |   0  |    0  |     "Invalido"     | 
-      |   1  |    0  |     "Invalido"     | 
-      |   0  |  100  |      0             | 
+      Examples: Division
+      | num1 | num2  | resultado |
+      |   2  |    1  |     2     |
+      |   0  |   -2  |     False | 
+      |   1  |    0  |     False | 
+      |   100  |  10  |    10    | 
