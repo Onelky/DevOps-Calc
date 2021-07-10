@@ -37,6 +37,8 @@ jobs:
         with:
           python-version: 3.6
           architecture: x64
-          run:  python unit-tests.py
+          
+      - name: Run test 
+        run:  python unit-tests.py
  
           
