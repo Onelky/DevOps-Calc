@@ -53,7 +53,7 @@ jobs:
         
       - name: Run unit tests with coverage  
         run: |
-          python coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m --fail-under=80
+          coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m --fail-under=80
 
       - name: Run integration tests
         run: behave tests 
