@@ -1,3 +1,8 @@
+# Links a los demas repositorios 
+* **Primera asignacion (API):** https://github.com/Onelky/Devops-T1-BlazorTemplate
+  
+* **Segunda asignacion (Wordpress):** https://github.com/Onelky/DevOps-Wordpress
+  
 # API Calculadora
 
 ## Descripcion
