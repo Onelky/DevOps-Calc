@@ -1,8 +1,11 @@
 # API Calculadora
 
+## Descripcion
+Esta es una aplicacion desarrollada en python que le permite al usuario recibir respuestas a distintas operaciones matematicas basicas (suma, multiplicacion, resta y division).
+
 ## Funcionalities
 
-- Suma de dos n umeros 
+- Suma de dos numeros 
 - Resta de dos numeros
 - Multiplicacion de dos numeros
 - Division de dos numeros
@@ -14,24 +17,36 @@
   
 ## Librerias 
 
-fastapi
-uvicorn
-behave
-coverage
+- fastapi
+- uvicorn
+- behave
+- coverage
 
+## Compilacion 
+```
+cd Calculadora-Python
+uvicorn api:app
+
+```
 # Pruebas 
 
 ## Pruebas unitarias
 
-Se utiliza el siguiente comando:
+```
+ python unit-tests.py
+
+```
+
+### Validacion del coverage
+Se utiliza el siguiente comando para validad la cobertura del codigo:
 ```
   coverage run unit-tests.py 
 
 ```
 
-> - Nota: En caso de que se tenga un virtual enviroment se utiliza el flag **--omit [directorio]**.
->  
-> - Para especificar el porcentaje minimo que deben cubrir las pruebas, se utiliza **--fail-under=[porcentaje_minimo]**  
+- Nota: En caso de que se tenga un virtual enviroment se utiliza el flag **--omit [directorio]**.
+  
+- Para especificar el porcentaje minimo que deben cubrir las pruebas, se utiliza **--fail-under=[porcentaje_minimo]**  
 
 ```
 coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m --fail-under=95
@@ -40,7 +55,7 @@ coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m
 
 
 ## Pruebas de integracion con behave 
-Se utiliza este compando: **behave [carpeta_de_steps]**
+Se utiliza este comando: **behave [carpeta_de_steps]**
 ```
 behave tests 
 ```
