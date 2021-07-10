@@ -48,11 +48,12 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
           
-      - name: Run unit tests with coverage  
+      - name: Run unit tests  
         run:  python unit-tests.py
         
       - name: Run unit tests with coverage  
-        run: python coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m --fail-under=80
+        run: |
+          python coverage run --omit 'mypython/*' -m unittest unit-tests.py && coverage report -m --fail-under=80
 
       - name: Run integration tests
         run: behave tests 
