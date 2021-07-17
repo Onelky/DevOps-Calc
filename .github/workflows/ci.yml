@@ -102,7 +102,18 @@ jobs:
     # Heroku API key associated with provided user's email.
          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
 
+  testStaging:
+    needs: deployStaging
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v2
+      - name: Newman Action
+        run: newman run tests/postman/api-calc-test.postman_collection.json -e tests/postman/enviroments/staging.json  -d tests/postman/testData.csv 
+  
+
       
+            
       
 
 
