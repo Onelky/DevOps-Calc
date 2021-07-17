@@ -8,7 +8,7 @@ calculadora = Calculadora()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"ID": "107043", "Nombre": "Onelky Hernandez Febles"}
 
 
 @app.get("/sumar")
