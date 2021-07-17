@@ -8,7 +8,7 @@ calculadora = Calculadora()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Nombre": "Onelky Hernandez Febles", "Matricula": "1087043"}
 
 
 @app.get("/sumar")
@@ -19,7 +19,7 @@ def read_sumar(num1: int = 0, num2: int = 0):
 
 
 @app.get("/restar")
-def read_sumar(num1: int = 0, num2: int = 0):
+def read_restar(num1: int = 0, num2: int = 0):
     return {
         'resultado': calculadora.restar(num1, num2)
     }
@@ -33,7 +33,7 @@ def read_multi(num1: int = 0, num2: int = 0):
 
 
 @app.get("/dividir")
-def read_multi(num1: int = 0, num2: int = 0):
+def read_division(num1: int = 0, num2: int = 0):
     return {
         'resultado': calculadora.division(num1, num2)
     }

@@ -1,0 +1,6 @@
+operation,num1,num2,result 
+sumar,1,2,3
+sumar,2,2000,2002
+sumar,0,0,0
+sumar,-10,0,False
+restar,2,1,1

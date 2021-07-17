@@ -10,4 +10,4 @@ Feature: Sumar dos numeros
       |   1  |    2  |     3          |
       |   2  | 2000  |     2002       | 
       |   0  |    0  |     0          | 
-      |   -10 |    0 |   False        | 
+      |   -10 |   0 |      False        | 
