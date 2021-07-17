@@ -21,19 +21,19 @@ def read_sumar(num1: int = 0, num2: int = 0):
 @app.get("/restar")
 def read_restar(num1: int = 0, num2: int = 0):
     return {
-        'resultado': calculadora.restar(num1, num2)
+        'resultado': str(calculadora.restar(num1, num2))
     }
 
 
 @app.get("/multiplicar")
 def read_multi(num1: int = 0, num2: int = 0):
     return {
-        'resultado': calculadora.multiplicar(num1, num2)
+        'resultado': str(calculadora.multiplicar(num1, num2))
     }
 
 
 @app.get("/dividir")
 def read_division(num1: int = 0, num2: int = 0):
     return {
-        'resultado': calculadora.division(num1, num2)
+        'resultado': str(calculadora.division(num1, num2))
     }
