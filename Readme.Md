@@ -1,8 +1,3 @@
-# Links a los demas repositorios 
-* **Primera asignacion (API):** https://github.com/Onelky/Devops-T1-BlazorTemplate
-  
-* **Segunda asignacion (Wordpress):** https://github.com/Onelky/DevOps-Wordpress
-  
 # API Calculadora
 
 ## Descripcion
@@ -72,3 +67,11 @@ Se utiliza este comando: **behave [carpeta_de_steps]**
 behave tests 
 ```
 
+# Estrategia de ramas
+
+La estrategia utilizada se basa en la utilizacion de distintos environments que reflejan las distintas etapas del ciclo de vida de una aplicacion (development, staging, production y testing). En cada una de las etapas se ejecutan pruebas y solo se puede entrar en la siguiente etapa una vez aprobados el build, deployment y test de la etapa previa.   
+
+# Links a los demas repositorios 
+* **Primera asignacion (API):** https://github.com/Onelky/Devops-T1-BlazorTemplate
+  
+* **Segunda asignacion (Wordpress):** https://github.com/Onelky/DevOps-Wordpress
