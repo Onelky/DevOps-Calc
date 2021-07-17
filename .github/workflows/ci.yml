@@ -53,22 +53,11 @@ jobs:
       - name: Run integration tests
         run: behave tests 
         
-  testDev:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: developer
-    steps:
-      - uses: actions/checkout@v2
-      - name: Newman Action
-        run: newman run tests/postman/api-calc-test.postman_collection.json -e tests/postman/enviroments/Development.postman_environment.json  -d tests/postman/testData.csv 
-  
 
-
-    
   
   deployDev:
     environment: developer
-    needs: testDev
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -83,6 +72,17 @@ jobs:
          email: ${{secrets.HEROKU_EMAIL}} 
     # Heroku API key associated with provided user's email.
          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+
+  testDev:
+    needs: deployDev
+    runs-on: ubuntu-latest
+    environment: developer
+    steps:
+      - uses: actions/checkout@v2
+      - name: Newman Action
+        run: newman run tests/postman/api-calc-test.postman_collection.json -e tests/postman/enviroments/Development.postman_environment.json  -d tests/postman/testData.csv 
+  
+
 
   deployStaging:
     environment: staging
