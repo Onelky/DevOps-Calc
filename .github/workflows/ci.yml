@@ -54,6 +54,7 @@ jobs:
       - name: Run integration tests
         run: behave tests 
   testDev:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -74,7 +75,7 @@ jobs:
     
   
   deploy:
-    needs: build
+    needs: testDev
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
