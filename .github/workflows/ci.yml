@@ -55,6 +55,7 @@ jobs:
         run: behave tests 
         
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
