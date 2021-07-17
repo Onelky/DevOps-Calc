@@ -30,9 +30,16 @@ Esta es una aplicacion desarrollada en python que le permite al usuario recibir 
 ## Compilacion 
 ```
 cd Calculadora-Python
-uvicorn api:app
 
 ```
+
+## Ejecutar 
+
+```
+uvicorn --host 0.0.0.0 --port 8000 api:app
+
+```
+
 # Pruebas 
 
 ## Pruebas unitarias
