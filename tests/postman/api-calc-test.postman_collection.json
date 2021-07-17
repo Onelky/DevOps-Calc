@@ -74,22 +74,21 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"pm.sendRequest(pm.environment.get(\"baseUrl\"), function (err, response) {",
-							"pm.variables.get(\"variable_key\");",
 							"",
-							"    console.log('ju');",
-							"});",
 							"pm.test(\"Response time is less than 5s\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
-							"pm.test(\"Validate result\", function () {",
-							"    let value = pm.iterationData.get('result')",
-							"    pm.variables.set(\"resultado\", parseInt(value))",
 							"",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.resultado).to.eql(pm.iterationData.get(\"result\"));",
+							"pm.test(\"Returned values are equal to test values\", function(){",
+							"    if(pm.iterationData.get(\"operation\") == \"sumar\"){",
+							"        pm.test(\"Validate result\", function () {",
+							"            var jsonData = pm.response.json();",
+							"            pm.expect(jsonData.resultado).to.eql(pm.iterationData.get(\"result\").toString());",
+							"        });",
+							"    }",
 							"});",
 							"",
-							""
+							"})"
 						],
 						"type": "text/javascript"
 					}
@@ -156,7 +155,6 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							
 							"key": "Content-Type",
 							"value": "application/json"
 						}
@@ -210,26 +208,27 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"",
+							"if(pm.iterationData.get(\"operation\") == \"restar\"){",
+							"",
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"pm.sendRequest(pm.environment.get(\"baseUrl\"), function (err, response) {",
-							"pm.variables.get(\"variable_key\");",
+							"pm.test(\"Returned values are equal to test values\", function(){",
 							"",
-							"    console.log('ju');",
+							"        pm.test(\"Validate result\", function () {",
+							"            var jsonData = pm.response.json();",
+							"            pm.expect(jsonData.resultado.toString()).to.eql(pm.iterationData.get(\"result\").toString());",
+							"        });",
+							"    ",
+							"});",
+							"",
 							"});",
 							"pm.test(\"Response time is less than 5s\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
-							"pm.test(\"Validate result\", function () {",
-							"    let value = pm.iterationData.get('result')",
-							"    pm.variables.set(\"resultado\", parseInt(value))",
-							"",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData.resultado).to.eql(pm.iterationData.get(\"result\"));",
-							"});",
-							"",
-							""
+							"}"
 						],
 						"type": "text/javascript"
 					}
@@ -239,7 +238,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/restar?num1=0&num2=0",
+					"raw": "{{baseUrl}}/restar?num1={{num1}}&num2={{num2}}",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -249,11 +248,11 @@
 					"query": [
 						{
 							"key": "num1",
-							"value": "0"
+							"value": "{{num1}}"
 						},
 						{
 							"key": "num2",
-							"value": "0"
+							"value": "{{num2}}"
 						}
 					]
 				}
@@ -337,11 +336,42 @@
 		},
 		{
 			"name": "Read Multi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"if(pm.iterationData.get(\"operation\") == \"multiplicar\"){",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.sendRequest(pm.environment.get(\"baseUrl\"), function (err, response) {",
+							"pm.test(\"Returned values are equal to test values\", function(){",
+							"",
+							"        pm.test(\"Validate result\", function () {",
+							"            var jsonData = pm.response.json();",
+							"            pm.expect(jsonData.resultado.toString()).to.eql(pm.iterationData.get(\"result\").toString());",
+							"        });",
+							"    ",
+							"});",
+							"",
+							"});",
+							"pm.test(\"Response time is less than 5s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/multiplicar?num1=0&num2=0",
+					"raw": "{{baseUrl}}/multiplicar?num1={{num1}}&num2={{num2}}",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -351,11 +381,11 @@
 					"query": [
 						{
 							"key": "num1",
-							"value": "0"
+							"value": "{{num1}}"
 						},
 						{
 							"key": "num2",
-							"value": "0"
+							"value": "{{num2}}"
 						}
 					]
 				}
@@ -438,12 +468,43 @@
 			]
 		},
 		{
-			"name": "Read Multi",
+			"name": "Read Dividir",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"if(pm.iterationData.get(\"operation\") == \"dividir\"){",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.sendRequest(pm.environment.get(\"baseUrl\"), function (err, response) {",
+							"pm.test(\"Returned values are equal to test values\", function(){",
+							"",
+							"        pm.test(\"Validate result\", function () {",
+							"            var jsonData = pm.response.json();",
+							"            pm.expect(jsonData.resultado.toString()).to.eql(pm.iterationData.get(\"result\").toString());",
+							"        });",
+							"    ",
+							"});",
+							"",
+							"});",
+							"pm.test(\"Response time is less than 5s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+							"});",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/dividir?num1=0&num2=0",
+					"raw": "{{baseUrl}}/dividir?num1={{num1}}&num2={{num2}}",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -453,11 +514,11 @@
 					"query": [
 						{
 							"key": "num1",
-							"value": "0"
+							"value": "{{num1}}"
 						},
 						{
 							"key": "num2",
-							"value": "0"
+							"value": "{{num2}}"
 						}
 					]
 				}

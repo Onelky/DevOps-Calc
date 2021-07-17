@@ -10,4 +10,4 @@ Feature: Restar dos numeros
       |   2  |    2  |     0        |
       |4000  | 2000  |     2000     | 
       |   0  |    0  |     0        | 
-      |   -3 |   -4  |    False     | 
+      |  -3  |   -4  |     False     | 
