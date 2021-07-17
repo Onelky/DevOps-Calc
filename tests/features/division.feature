@@ -10,4 +10,4 @@ Feature: Dividir dos numeros
       |   2  |    1  |     2     |
       |   0  |   -2  |     False | 
       |   1  |    0  |     False | 
-      |   100  |  10  |    10    | 
+      |   100 |  10  |     10    | 

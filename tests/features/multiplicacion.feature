@@ -9,5 +9,5 @@ Feature: Multiplicacion de dos numeros
     | num1 | num2  | resultado     |
     |   7  |    2  |     14        |
     |   7  |    0  |     0         | 
-    |   2  |   -5  |    False        | 
+    |   2  |   -5  |     False        | 
     |   1  |  100  |     100       | 
