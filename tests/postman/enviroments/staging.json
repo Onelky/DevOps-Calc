@@ -1,0 +1,14 @@
+{
+	"id": "e4a5d35a-fed4-4710-93d2-51836c354c4f",
+	"name": "staging",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://api-calc-staging.herokuapp.com",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "staging",
+	"_postman_exported_at": "2021-07-17T11:01:57.103Z",
+	"_postman_exported_using": "Postman/7.36.5"
+}
