@@ -1,14 +1,21 @@
 # API Calculadora
 
 ## Descripcion
-Esta es una aplicacion desarrollada en python que le permite al usuario recibir respuestas a distintas operaciones matematicas basicas (suma, multiplicacion, resta y division).
-
+Esta es una aplicacion desarrollada durante la asignatura "DevOps y DevSecOps". Es una calculadora en python que le permite al usuario recibir respuestas a distintas operaciones matematicas basicas (suma, multiplicacion, resta y division). 
+La misma fue realizada con el fin de simular varias etapas del ciclo de vida de una aplicacion (development, staging, production y testing) utilizando distintas herramientas de automatizacion de pruebas y varios pipelines de Github Actions. De esta manera, cada vez que se intenta hacer un commit en la rama principal, se ejecutan pruebas y solo se puede entrar en la siguiente etapa una vez aprobados el build, deployment y test de la etapa previa.   
+  
+  
 ## Funcionalities
 
 - Suma de dos numeros 
 - Resta de dos numeros
 - Multiplicacion de dos numeros
 - Division de dos numeros
+
+## Branch strategy
+La estrategia a utilizar es GitHub Flow, cada vez que se desarrolla un feature Each developer creates a new branch, the feature branch, for their changes from trunk.
+Feature branches can be deployed to a testing environment for verification or pushed directly to trunk and deployed to a non-production environment from there.
+A short-lived release branch may be used off trunk to prepare for and execute a release.
 
 # Requirements 
 
@@ -67,11 +74,4 @@ Se utiliza este comando: **behave [carpeta_de_steps]**
 behave tests 
 ```
 
-# Estrategia de ramas
 
-La estrategia utilizada se basa en la utilizacion de distintos environments que reflejan las distintas etapas del ciclo de vida de una aplicacion (development, staging, production y testing). En cada una de las etapas se ejecutan pruebas y solo se puede entrar en la siguiente etapa una vez aprobados el build, deployment y test de la etapa previa.   
-
-# Links a los demas repositorios 
-* **Primera asignacion (API):** https://github.com/Onelky/Devops-T1-BlazorTemplate
-  
-* **Segunda asignacion (Wordpress):** https://github.com/Onelky/DevOps-Wordpress
